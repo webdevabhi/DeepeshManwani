@@ -1,0 +1,12 @@
+<h2>Current Balance: ₹{{ balance }}</h2>
+<div *ngIf="withdrawFlag">
+  <input #withdraw type="number" />
+  <button (click)="onWithdrawMoney()">Withdraw Money</button>
+</div>
+<div *ngIf="depositFlag">
+  <input #deposit type="number" />
+  <button (click)="onDepositMoney()">Deposit Money</button>
+</div>
+
+<button *ngIf="!depositFlag" (click)="onDepositMoney()">Deposit Money</button>
+<button *ngIf="!withdrawFlag" (click)="onWithdraw()">Withdraw Money</button>
